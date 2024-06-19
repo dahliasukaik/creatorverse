@@ -1,5 +1,6 @@
+
 // src/App.js
-import '../node_modules/@picocss/pico/css/pico.min.css';
+import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ShowCreators from './pages/ShowCreators';
@@ -9,14 +10,16 @@ import AddCreator from './pages/AddCreator';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<ShowCreators />} />
-        <Route path="/creator/:id" element={<ViewCreator />} />
-        <Route path="/edit/:id" element={<EditCreator />} />
-        <Route path="/add" element={<AddCreator />} />
-      </Routes>
-    </Router>
+    <div className="app-container">
+      <Router>
+        <Routes>
+          <Route path="/" element={<ShowCreators />} />
+          <Route path="/creator/:id" element={<ViewCreator />} />
+          <Route path="/edit/:id" element={<EditCreator />} />
+          <Route path="/add" element={<AddCreator />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 

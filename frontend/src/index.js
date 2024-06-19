@@ -1,5 +1,6 @@
 // src/index.js
-import '../node_modules/@picocss/pico/css/pico.min.css';
+import '@picocss/pico/css/pico.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Import Font Awesome
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';

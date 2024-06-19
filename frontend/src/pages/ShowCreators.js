@@ -7,16 +7,19 @@ import { Link } from 'react-router-dom';
 function ShowCreators() {
   const [creators, setCreators] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchCreators = async () => {
-      const { data, error } = await supabase.from('creators').select('*');
-      if (error) {
-        console.error('Error fetching creators:', error);
-      } else {
+      try {
+        const { data, error } = await supabase.from('creators').select('*');
+        if (error) throw error;
         setCreators(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     };
 
     fetchCreators();
@@ -27,18 +30,21 @@ function ShowCreators() {
   };
 
   if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
-    <div>
-      <h1>Content Creators</h1>
-      <Link to="/add"><button>Add New Creator</button></Link>
-      <div>
+    <div className="app-container">
+      <h1 className="title">Welcome to Creatorverse!</h1>
+      <div className='button-home'> 
+        <Link to="/add" className='button-primary'>Add New Creator</Link> 
+      </div>
+      <div className="grid">
         {creators.length > 0 ? (
           creators.map((creator) => (
             <CreatorCard key={creator.id} creator={creator} onDelete={handleDelete} />
           ))
         ) : (
-          <p>No content creators found.</p>
+          <p className='error-text'>No content creators...</p>
         )}
       </div>
     </div>
