@@ -30,7 +30,6 @@ function AddCreator() {
   return (
     <body>
     <form onSubmit={handleSubmit}>
-      
       <h1>Add New Creator</h1>
       <input
             placeholder="Name"
@@ -41,8 +40,8 @@ function AddCreator() {
             required
       />
       <input 
-        type="url" 
-        placeholder="URL" 
+        placeholder="URL"
+        type="url"  
         value={url} 
         onChange={(e) => setUrl(e.target.value)} 
         maxLength={2048}
@@ -56,8 +55,8 @@ function AddCreator() {
         required
       />
       <input 
-        type="url" 
-        placeholder="Image URL (optional)" 
+        placeholder="Image URL (optional)"
+        type="url"  
         value={imageURL} 
         onChange={(e) => setImageURL(e.target.value)} 
         maxLength={2048}
@@ -65,9 +64,8 @@ function AddCreator() {
       />
       <button type="submit">Add Creator</button>
     </form>
-    <div className="button-container">
-        <Link to="/" className="button-outline">View All Creators</Link>
-    </div>
+      <Link to="/" className="button-outline">Exit</Link>
+    
     </body>
     
    

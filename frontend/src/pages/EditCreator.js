@@ -1,6 +1,6 @@
 // src/pages/EditCreator.js
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../client';
 
 function EditCreator() {
@@ -72,12 +72,12 @@ function EditCreator() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <div className="app-container">
+    <body>
       <form onSubmit={handleSubmit}>
-        <h2>Edit Creator</h2>
+        <h1>Edit Creator</h1>
         <label>
-          <h3>Name</h3>
           <input
+            placeholder="Name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -86,8 +86,8 @@ function EditCreator() {
           />
         </label>
         <label>
-          <h3>URL</h3>
           <input
+            placeholder="URL" 
             type="url"
             value={url}
             onChange={(e) => setUrl(e.target.value)}
@@ -97,8 +97,8 @@ function EditCreator() {
           />
         </label>
         <label>
-          <h3>Description</h3>
           <textarea
+            placeholder="Description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             maxLength={500}
@@ -106,8 +106,8 @@ function EditCreator() {
           />
         </label>
         <label>
-          <h3>Image URL (optional)</h3>
           <input
+            placeholder="Image URL (optional)"
             type="url"
             value={imageURL}
             onChange={(e) => setImageURL(e.target.value)}
@@ -117,8 +117,13 @@ function EditCreator() {
         </label>
         <button type="submit" className="button-primary">Update Creator</button>
       </form>
-      <button onClick={handleDelete} className="button-outline" style={{ marginTop: '20px' }}>Delete Creator</button>
-    </div>
+      <div className="delete-button">
+        <button onClick={handleDelete}  >Delete Creator</button>
+      </div>
+      <Link to="/" className="button-outline">Exit</Link>
+      
+      
+    </body>
   );
 }
 

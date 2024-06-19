@@ -1,11 +1,11 @@
 /* src/App.css */
 /* Reset margin and padding for body and html */
-html, body {
+body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: #210a1fb7; /* Set a background color that covers the entire viewport */
+  background-color: #1f0c1f; /* Set a background color that covers the entire viewport */
   font-family:  'Bubblegum Sans';
 }
 .grid {
@@ -96,13 +96,17 @@ textarea {
 
 .button-outline {
   background-color: transparent;
-  border: 1px solid #3e8fe5fa;
+  border: 3px solid #3e8fe5fa;
   color: #3e8fe5fa;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 25px;
   cursor: pointer;
   border-radius: 4px;
   margin-top: 10px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+
 }
 
 .subtitle {
@@ -168,7 +172,6 @@ h1 {
   text-align: center;
   padding-bottom: 5%;
 }
-
 
 
 
