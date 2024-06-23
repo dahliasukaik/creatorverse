@@ -76,6 +76,7 @@ function EditCreator() {
       <form onSubmit={handleSubmit}>
         <h1>Edit Creator</h1>
         <label>
+          <h3 className='subtitle'> Name </h3>
           <input
             placeholder="Name"
             type="text"
@@ -86,6 +87,7 @@ function EditCreator() {
           />
         </label>
         <label>
+          <h3 className='subtitle'> URL </h3>
           <input
             placeholder="URL" 
             type="url"
@@ -97,6 +99,7 @@ function EditCreator() {
           />
         </label>
         <label>
+          <h3 className='subtitle'> Description </h3>
           <textarea
             placeholder="Description"
             value={description}
@@ -106,6 +109,7 @@ function EditCreator() {
           />
         </label>
         <label>
+          <h3 className='subtitle'> Image URL (optional) </h3>
           <input
             placeholder="Image URL (optional)"
             type="url"
@@ -118,7 +122,7 @@ function EditCreator() {
         <button type="submit" className="button-primary">Update Creator</button>
       </form>
       <div className="delete-button">
-        <button onClick={handleDelete}  >Delete Creator</button>
+        <button onClick={handleDelete}  className='delete-button'>Delete Creator</button>
       </div>
       <Link to="/" className="button-outline">Exit</Link>
       
