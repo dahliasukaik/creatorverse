@@ -23,13 +23,15 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] Picocss is used to style HTML elements
+- [x] Picocss is used to style HTML elements
 - [x] The content creator items are displayed in a creative format, like cards instead of a list
 - [x] An image of each content creator is shown on their content creator card
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+- [x] **Each creator card includes intuitive icons for quickly accessing the creator's link, editing, and deleting the creator**
+- [x] **A search bar is provided to allow users to quickly find specific content creators by searching for names or descriptions**
+- [x] **Pagination is implemented to efficiently handle large lists of content creators, displaying a set number of creators per page and allowing users to navigate through multiple pages**
 
 ## Video Walkthrough
 

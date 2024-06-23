@@ -1,4 +1,3 @@
-
 // src/App.js
 import './App.css';
 import React from 'react';
@@ -7,6 +6,7 @@ import ShowCreators from './pages/ShowCreators';
 import ViewCreator from './pages/ViewCreator';
 import EditCreator from './pages/EditCreator';
 import AddCreator from './pages/AddCreator';
+import Pagination from './components/Pagination'; 
 
 function App() {
   return (
@@ -24,4 +24,3 @@ function App() {
 }
 
 export default App;
-

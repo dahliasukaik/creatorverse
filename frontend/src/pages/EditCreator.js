@@ -72,9 +72,9 @@ function EditCreator() {
   if (loading) return <p>Loading...</p>;
 
   return (
-    <body>
+    <div className="app-container">
       <form onSubmit={handleSubmit}>
-        <h1>Edit Creator</h1>
+        <h1 className='title'>Edit Creator</h1>
         <label>
           <h3 className='subtitle'> Name </h3>
           <input
@@ -82,7 +82,7 @@ function EditCreator() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            maxLength={50} // Set the maximum length to 50 characters
+            maxLength={50}
             required
           />
         </label>
@@ -95,7 +95,6 @@ function EditCreator() {
             onChange={(e) => setUrl(e.target.value)}
             maxLength={2048}
             required
-            
           />
         </label>
         <label>
@@ -116,20 +115,14 @@ function EditCreator() {
             value={imageURL}
             onChange={(e) => setImageURL(e.target.value)}
             maxLength={2048}
-            required
           />
         </label>
         <button type="submit" className="button-primary">Update Creator</button>
       </form>
-      <div className="delete-button">
-        <button onClick={handleDelete}  className='delete-button'>Delete Creator</button>
-      </div>
       <Link to="/" className="button-outline">Exit</Link>
-      
-      
-    </body>
+      <button onClick={handleDelete} className="delete-button">Delete Creator</button>
+    </div>
   );
 }
 
 export default EditCreator;
-

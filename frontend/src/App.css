@@ -1,38 +1,39 @@
-/*//src/ App.css*/
+/* src/App.css */
 body {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
   background-color: #1f0c1f; /* Set a background color that covers the entire viewport */
-  font-family:  'Bubblegum Sans';
+  font-family: 'Bubblegum Sans';
 }
+
 .grid {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family:  'Bubblegum Sans';
+  font-family: 'Bubblegum Sans';
 }
+
 .title {
   color: #f9f6f6;
   text-align: center;
   font-weight: 700;
-  border: 5px;
-  background-color: rgb(105, 32, 118);
+  background-color: rgba(160, 44, 180, 0.373);
   font-size: 3em;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  font-family: 'Bubblegum Sans';
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .card {
@@ -46,17 +47,18 @@ body {
   justify-content: space-between;
   text-align: center;
 }
+
 .card-text {
   text-align: center;
-  background-color: #231d3d; 
-  background: #fff;
 }
+
 .error-text {
   text-align: center;
   color: #ff1313;
   font-weight: 700;
   font-size: 2em;
 }
+
 .card img {
   width: 100%; 
   height: 200px; 
@@ -65,14 +67,13 @@ body {
   margin-bottom: 20px;
 }
 
-/* description box for bigger size */
 textarea {
   width: 100%;
   height: 200px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  resize: vertical; 
+  resize: vertical;
 }
 
 .button-home {
@@ -80,9 +81,10 @@ textarea {
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
-  font-family:  'Bubblegum Sans';
+  font-family: 'Bubblegum Sans';
   font-weight: 700;
 }
+
 .button-primary {
   background-color: #2281cfe7;
   border: none;
@@ -91,9 +93,9 @@ textarea {
   cursor: pointer;
   border-radius: 8px;
   font-weight: 700;
-  text-decoration: none; /* Remove underline from buttons */
+  text-decoration: none;
   display: inline-block;
-  margin-right: 10px; /* Add margin to space out buttons */
+  margin-right: 10px;
 }
 
 .button-outline {
@@ -108,11 +110,8 @@ textarea {
   text-decoration: none;
   display: flex;
   justify-content: center;
-
 }
 
-
-/* Creator details on view page */
 .view-creator {
   display: flex;
   flex-direction: row;
@@ -120,27 +119,27 @@ textarea {
   text-align: center;
   padding: 20px;
 }
-/*creator image on view page*/
+
 .left-creator {
   display: flex;
   flex-direction: column;
   background-color: white;
   justify-content: space-between;
   width: 45%;
-  align-items: center; /* Center items horizontally */
+  align-items: center;
   padding: 5%;
   border-radius: 8px;
 }
 
-/* Description on view page */
-.description-container{
-padding: 5%;
-display: flex;
-background-color: white;
-flex-direction: column;
-width: 45%;
-border-radius: 8px;
+.description-container {
+  padding: 5%;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  width: 45%;
+  border-radius: 8px;
 }
+
 .description {
   color: rgb(18, 17, 17);
   font-family: Georgia, 'Times New Roman', Times, serif;
@@ -148,39 +147,38 @@ border-radius: 8px;
   font-weight: 700;
 }
 
-
-/* Creator image on view page */
 .creator-image {
-  width: 80%; /* Adjust width as needed */
+  width: 80%;
   height: 300px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
-/*page titles and celeb names*/
 h1 {
   color: #f9f6f6;
   font-family: 'Bubblegum Sans';
   text-align: center;
   padding-bottom: 5%;
 }
-/*edit page text box titles*/
+
 .subtitle {
   font-size: 1.5em; 
   color: white;
   margin-top: 10px;
 }
-/* edit page delete button*/
+
 .delete-button {
-  background-color: #ff0000; /* Red color for the delete button */
+  background-color: #ff0000;
   font-weight: 700;
   text-align: center;
   border: none;
   border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-/* Icon button styles on creator cards */
 .icon-button {
   background: none;
   border: none;
@@ -188,15 +186,93 @@ h1 {
   font-size: 1.5em;
   color: #797b7e;
   margin: 0 5px;
+  position: relative;
 }
+
 .icon-button:hover {
   color: #4dd9ec;
 }
+
 .icon-buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-bottom: 20px;
 }
+.delete-button .delete-icon {
+  color: #ff0000; 
+}
+.delete-button:hover .delete-icon {
+  color: #cc0000; 
+}
 
 
+
+.icon-button .icon-text {
+  visibility: hidden;
+  background-color: #000; 
+  color: #fff; 
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute; 
+  z-index: 1;
+  bottom: 125%; 
+  left: 50%;
+  margin-left: -50px; 
+  opacity: 0;
+  font-size: 20px;
+  transition: opacity 0.3s; 
+  width: 100px;
+}
+
+.icon-button .icon-text::after {
+  content: "";
+  position: absolute;
+  top: 100%; 
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent; 
+}
+
+.icon-button:hover .icon-text {
+  visibility: visible;
+  opacity: 1; 
+}
+
+
+
+
+/*for pagination*/
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-item {
+  margin: 0 5px;
+}
+
+.page-link {
+  color: #007bff;
+  cursor: pointer;
+  padding: 10px 15px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.page-item.active .page-link {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.page-link:hover {
+  background-color: #0056b3;
+  color: white;
+}
