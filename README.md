@@ -2,7 +2,7 @@
 
 Submitted by: **👉🏿 Dahlia Sukaik**
 
-About this web app: **👉🏿 app description here**
+About this web app: **👉🏿 Creatorverse is a web application that allows users to manage and share their favorite content creators across various platforms like Twitch, YouTube, Instagram, and more. Users can easily add, edit, view, and delete content creators, providing a brief description, URL, and optional image for each. The app also features search functionality, pagination, and intuitive icons for quick actions, enhancing the overall user experience.**
 
 Time spent: **👉🏿 20** hours
 
