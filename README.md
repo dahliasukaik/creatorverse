@@ -4,7 +4,7 @@ Submitted by: **👉🏿 Dahlia Sukaik**
 
 About this web app: **👉🏿 app description here**
 
-Time spent: **👉🏿 10** hours
+Time spent: **👉🏿 20** hours
 
 ## Required Features
 
