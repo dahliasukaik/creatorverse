@@ -29,18 +29,18 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [x] **Each creator card includes intuitive icons for quickly accessing the creator's link, editing, and deleting the creator**
-- [x] **A search bar is provided to allow users to quickly find specific content creators by searching for names or descriptions**
-- [x] **Pagination is implemented to efficiently handle large lists of content creators, displaying a set number of creators per page and allowing users to navigate through multiple pages**
+- [x] Each creator card includes intuitive icons for quickly accessing the creator's link, editing, and deleting the creator
+- [x] A search bar is provided to allow users to quickly find specific content creators by searching for names or descriptions
+- [x] Pagination is implemented to efficiently handle large lists of content creators, displaying a set number of creators per page and allowing users to navigate through multiple pages
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+👉🏿<img src='video/creatorverse-gif.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  👉🏿 GIF tool here
+GIF created with ...  👉🏿 ScreenToGif
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -48,7 +48,18 @@ GIF created with ...  👉🏿 GIF tool here
 
 ## Notes
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+### Challenges Encountered
+
+1. **Pagination Handling**: Ensuring pagination worked correctly without navigating away from the page required careful handling of anchor tag behaviors and preventing default actions.
+2. **Search and Filter**: Implementing a dynamic search and filter feature that updates displayed creators in real-time posed challenges, particularly in maintaining efficient filtering and correct pagination updates.
+3. **Styling Consistency**: Achieving consistent and responsive design across different components was challenging, especially when integrating PicoCSS with custom styles.
+4. **Error Handling**: Providing robust error handling for various asynchronous operations (e.g., fetching data, updating, deleting) to ensure meaningful user feedback and smooth experience.
+5. **Hover Effects for Icons**: Adding hover effects for icons and ensuring additional text appeared correctly without disrupting the layout required precise CSS adjustments and testing.
+
+### Additional Context
+
+1. **Choice of PicoCSS**: Chosen for its minimalist design and ease of use, helping quickly set up a visually appealing layout. Integration with custom components required careful handling to avoid conflicts.
+2. **User Experience Enhancements**: Adding confirmation prompts before deleting a creator and hover text for action icons to enhance user experience and prevent accidental actions.
 
 ## License
 

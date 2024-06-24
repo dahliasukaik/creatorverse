@@ -55,19 +55,21 @@ function EditCreator() {
       console.error('Unexpected error updating creator:', error);
     }
   };
-
   const handleDelete = async () => {
-    try {
-      const { error } = await supabase.from('creators').delete().eq('id', id);
-      if (error) {
-        console.error('Error deleting creator:', error);
-      } else {
-        navigate('/');
+    const confirmed = window.confirm("Are you sure you want to delete this creator?");
+    if (confirmed) {
+      try {
+        const { error } = await supabase.from('creators').delete().eq('id', id);
+        if (error) {
+          console.error('Error deleting creator:', error);
+        } else {
+          navigate('/');
+        }
+      } catch (error) {
+        console.error('Unexpected error deleting creator:', error);
       }
-    } catch (error) {
-      console.error('Unexpected error deleting creator:', error);
     }
-  };
+  };  
 
   if (loading) return <p>Loading...</p>;
 

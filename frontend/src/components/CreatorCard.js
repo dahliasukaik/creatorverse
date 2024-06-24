@@ -46,7 +46,9 @@ function CreatorCard({ creator, onDelete }) {
           <span className="icon-text">Edit</span>
         </Link>
         <button onClick={(e) => { e.stopPropagation(); handleDelete(); }} className="icon-button delete-button">
-          <i className="fas fa-times delete-icon"></i>
+        <i className="fas fa-times delete-icon"></i>
+        <span className="icon-text">Delete</span>
+          
         </button>
       </footer>
     </article>
