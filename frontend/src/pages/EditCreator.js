@@ -90,6 +90,7 @@ function EditCreator() {
         </label>
         <label>
           <h3 className='subtitle'> URL </h3>
+          <div className='info-text'>Provide at least one of the creator's social media links</div>
           <input
             placeholder="URL" 
             type="url"
@@ -110,7 +111,8 @@ function EditCreator() {
           />
         </label>
         <label>
-          <h3 className='subtitle'> Image URL (optional) </h3>
+          <h3 className='subtitle'> Image URL (Optional)  </h3>
+          <div className='info-text'>Provide a link to an image of your creator. Be sure to include the http://</div>
           <input
             placeholder="Image URL (optional)"
             type="url"

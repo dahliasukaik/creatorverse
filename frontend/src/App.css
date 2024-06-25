@@ -276,3 +276,29 @@ h1 {
   background-color: #0056b3;
   color: white;
 }
+
+.info-text {
+  color: white;
+}
+
+
+/* Style for the creator's URL */
+.creator-url {
+  font-size: 1em;
+  color: #2281cfe7;
+  word-break: break-all; /* Ensures long URLs wrap properly */
+  margin: 10px 0;
+}
+
+/* New style for the creator's link */
+.creator-link {
+  font-size: 1.2em;
+  color: #2281cfe7;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.creator-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}

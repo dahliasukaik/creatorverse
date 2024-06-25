@@ -40,11 +40,10 @@ function ViewCreator() {
           <div className="left-creator">
             <img src={creator.imageURL || placeholderImage} alt={creator.name} className="creator-image" />
             <h2>{creator.name}</h2>
+            <a href={creator.url} target="_blank" rel="noopener noreferrer" className="creator-url">
+              {creator.url}
+            </a>
             <div className="icon-buttons">
-              <a href={creator.url} target="_blank" rel="noopener noreferrer" className="icon-button">
-                <i className="fas fa-link"></i>
-                <span className="icon-text">Channel</span>
-              </a>
               <Link to={`/edit/${creator.id}`} className="icon-button">
                 <i className="fas fa-pen"></i>
                 <span className="icon-text">Edit</span>
