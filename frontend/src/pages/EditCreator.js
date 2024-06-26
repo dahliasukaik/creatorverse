@@ -67,6 +67,10 @@ function EditCreator() {
   };
 
   const handleDelete = async () => {
+    if (!window.confirm('Are you sure you want to delete this creator?')) {
+      return;
+    }
+    
     try {
       const { error } = await supabase.from('creators').delete().eq('id', id);
       if (error) {
@@ -77,7 +81,7 @@ function EditCreator() {
     } catch (error) {
       console.error('Unexpected error deleting creator:', error);
     }
-  };  
+  };
 
   if (loading) return <p>Loading...</p>;
 
