@@ -30,6 +30,7 @@ function AddCreator() {
     <div className="app-container">
       <form onSubmit={handleSubmit}>
         <h1 className='title'>Add New Creator</h1>
+        <h3 className='subtitle'> Name </h3>
         <input
           placeholder="Name"
           type="text"
@@ -38,6 +39,8 @@ function AddCreator() {
           maxLength={50}
           required
         />
+        <h3 className='subtitle'> URL </h3>
+        <div className='info-text'>Provide at least one of the creator's social media links</div>
         <input
           placeholder="URL"
           type="url"
@@ -46,6 +49,7 @@ function AddCreator() {
           maxLength={2048}
           required
         />
+        <h3 className='subtitle'> Description </h3>
         <textarea
           placeholder="Description"
           value={description}
@@ -53,8 +57,10 @@ function AddCreator() {
           maxLength={500}
           required
         />
+        <h3 className='subtitle'> Image URL</h3>
+        <div className='info-text'>(Optional) Provide a link to an image of your creator. Be sure to include the http://</div>
         <input
-          placeholder="Image URL (optional)"
+          placeholder="Image URL"
           type="url"
           value={imageURL}
           onChange={(e) => setImageURL(e.target.value)}

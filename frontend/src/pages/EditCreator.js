@@ -11,6 +11,7 @@ function EditCreator() {
   const [description, setDescription] = useState('');
   const [imageURL, setImageURL] = useState('');
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const fetchCreator = async () => {
@@ -39,6 +40,15 @@ function EditCreator() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if URL is unique
+    const { data, error } = await supabase.from('creators').select('*').eq('url', url).neq('id', id);
+    if (data && data.length > 0) {
+      setError('This URL is already in use. Please enter a unique URL.');
+      return;
+    }
+
+    // If URL is unique, proceed to update the creator
     try {
       const { error } = await supabase.from('creators').update({
         name,
@@ -55,19 +65,17 @@ function EditCreator() {
       console.error('Unexpected error updating creator:', error);
     }
   };
+
   const handleDelete = async () => {
-    const confirmed = window.confirm("Are you sure you want to delete this creator?");
-    if (confirmed) {
-      try {
-        const { error } = await supabase.from('creators').delete().eq('id', id);
-        if (error) {
-          console.error('Error deleting creator:', error);
-        } else {
-          navigate('/');
-        }
-      } catch (error) {
-        console.error('Unexpected error deleting creator:', error);
+    try {
+      const { error } = await supabase.from('creators').delete().eq('id', id);
+      if (error) {
+        console.error('Error deleting creator:', error);
+      } else {
+        navigate('/');
       }
+    } catch (error) {
+      console.error('Unexpected error deleting creator:', error);
     }
   };  
 
@@ -77,6 +85,7 @@ function EditCreator() {
     <div className="app-container">
       <form onSubmit={handleSubmit}>
         <h1 className='title'>Edit Creator</h1>
+        {error && <p className="error-text">{error}</p>}
         <label>
           <h3 className='subtitle'> Name </h3>
           <input
@@ -111,8 +120,8 @@ function EditCreator() {
           />
         </label>
         <label>
-          <h3 className='subtitle'> Image URL (Optional)  </h3>
-          <div className='info-text'>Provide a link to an image of your creator. Be sure to include the http://</div>
+          <h3 className='subtitle'> Image URL</h3>
+          <div className='info-text'>(Optional) Provide a link to an image of your creator. Be sure to include the http://</div>
           <input
             placeholder="Image URL (optional)"
             type="url"
